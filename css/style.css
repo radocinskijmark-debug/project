@@ -1,0 +1,310 @@
+:root {
+    --blue: #2b2bff;
+    --pink: #ff3d81;
+    --yellow: #ffd23f;
+    --mint: #2ee6a6;
+    --paper: #fff8ec;
+    --ink: #1b1340;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+    line-height: 1.65;
+    background-color: var(--paper);
+    color: var(--ink);
+    overflow-x: hidden;
+}
+
+a {
+    color: var(--blue);
+}
+
+a:focus-visible,
+.button:focus-visible {
+    outline: 3px solid var(--pink);
+    outline-offset: 3px;
+}
+
+/* ---------- Шапка и меню ---------- */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 14px 32px;
+    background-color: var(--ink);
+}
+
+.logo {
+    font-family: "Arial Black", Impact, sans-serif;
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: var(--yellow);
+}
+
+.main-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+}
+
+.main-nav a {
+    display: block;
+    padding: 10px 16px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--paper);
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.main-nav a:hover {
+    background-color: var(--pink);
+    color: #ffffff;
+}
+
+/* ---------- Баннер ---------- */
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 56px 32px;
+    background-color: var(--blue);
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.banner-text {
+    flex: 1 1 0;
+    max-width: 640px;
+    margin-left: auto;
+}
+
+.banner h1 {
+    font-family: "Arial Black", Impact, sans-serif;
+    font-size: clamp(2rem, 5vw, 3.6rem);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.banner-date {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--yellow);
+    margin-bottom: 28px;
+}
+
+.button {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 999px;
+    background-color: var(--yellow);
+    color: var(--ink);
+    font-weight: 800;
+    text-decoration: none;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.button:hover {
+    background-color: var(--mint);
+}
+
+.banner-poster {
+    flex: 0 1 340px;
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    margin-right: auto;
+    border-radius: 18px;
+    transform: rotate(3deg);
+    box-shadow: 10px 10px 0 var(--pink);
+}
+
+/* ---------- Контент ---------- */
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 32px 48px;
+}
+
+.content section {
+    padding-top: 40px;
+}
+
+h2 {
+    font-family: "Arial Black", Impact, sans-serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    margin-bottom: 18px;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+p {
+    max-width: 70ch;
+    margin-bottom: 14px;
+}
+
+ul,
+ol {
+    padding-left: 24px;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+
+/* ---------- Карточки ---------- */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.card {
+    padding: 24px;
+    border: 3px solid var(--ink);
+    border-radius: 16px;
+    background-color: #ffffff;
+    box-shadow: 6px 6px 0 var(--ink);
+}
+
+.card p {
+    margin-bottom: 0;
+}
+
+.card-pink   { background-color: #ffd1e1; }
+.card-yellow { background-color: #fff0b3; }
+.card-mint   { background-color: #bdf7e1; }
+.card-blue   { background-color: #d4d4ff; }
+
+/* ---------- Таблица ---------- */
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border: 3px solid var(--ink);
+}
+
+th,
+td {
+    padding: 12px 16px;
+    text-align: left;
+    border: 1px solid var(--ink);
+}
+
+th {
+    background-color: var(--ink);
+    color: var(--yellow);
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fff0b3;
+}
+
+/* ---------- Подвал ---------- */
+.site-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 24px 32px;
+    background-color: var(--ink);
+    color: var(--paper);
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+.site-footer a {
+    color: var(--yellow);
+}
+
+/* ---------- Адаптивность ---------- */
+@media (max-width: 900px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 14px 20px;
+        position: static;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .banner {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .banner-text {
+        margin: 0;
+    }
+
+    .banner-poster {
+        margin: 0 auto;
+        max-width: 280px;
+    }
+
+    .content {
+        padding: 16px 20px 40px;
+    }
+
+    .two-columns {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    th,
+    td {
+        padding: 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+}
